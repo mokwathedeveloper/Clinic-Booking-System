@@ -60,7 +60,7 @@ class AppointmentUpdate(BaseModel):
     """Schema for updating appointment information"""
     appointment_date: Optional[datetime] = None
     reason: Optional[str] = Field(None, min_length=1, max_length=1000)
-    status: Optional[str] = Field(None, regex="^(scheduled|completed|cancelled)$")
+    status: Optional[str] = Field(None, pattern="^(scheduled|completed|cancelled)$")
     notes: Optional[str] = Field(None, max_length=2000)
 
 
